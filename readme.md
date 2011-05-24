@@ -14,15 +14,14 @@ You can see a small demo at:
 http://blog.edlin.org/jqleetoclock-a-celebration-to-1337-oclock
 
 Usage: include the following code on your web page:
-```javascript
+<pre>
     &lt;script ="jqLeetOclock.js"/&gt;
     $(document).ready(function () {
       $('body').leetOclock();
     });
-```
-
+</pre>
 These are the default options:
-```javascript
+<pre>
     {
       //time in the day when it shall trigger
       'hour'	: 13,
@@ -32,10 +31,12 @@ These are the default options:
       //duration in seconds before reverting
      'duration' : 30
     };
-```
+</pre>
 override any of the default settings to modify them
 e.g.
+<pre>
     $('body').leetOclock({'duration':60});
+</pre>
 would change the duration to 60 seconds.
 
 Note:

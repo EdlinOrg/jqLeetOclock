@@ -11,28 +11,28 @@ displays it like that for 30 seconds,
 and you have to wait another 24 hours for the magic moment.
 
 You can see a small demo at:
-<a href="http://blog.edlin.org/jqleetoclock-a-celebration-to-1337-oclock">http://blog.edlin.org/jqleetoclock-a-celebration-to-1337-oclock</a>
+http://blog.edlin.org/jqleetoclock-a-celebration-to-1337-oclock
 
 Usage: include the following code on your web page:
-&lt;script ="jqLeetOclock.js"/&gt;
-$(document).ready(function () {
-  $('body').leetOclock();
-});
+    &lt;script ="jqLeetOclock.js"/&gt;
+    $(document).ready(function () {
+      $('body').leetOclock();
+    });
 
 These are the default options:
-{
-  //time in the day when it shall trigger
-  'hour'	: 13,
-  'minute' : 37,
-  'second' : 0,
-
-  //duration in seconds before reverting
-  'duration' : 30
-};
+    {
+      //time in the day when it shall trigger
+      'hour'	: 13,
+      'minute' : 37,
+      'second' : 0,
+    
+      //duration in seconds before reverting
+     'duration' : 30
+    };
 
 override any of the default settings to modify them
 e.g.
-$('body').leetOclock({'duration':60});
+    $('body').leetOclock({'duration':60});
 would change the duration to 60 seconds.
 
 Note:

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://github.com/EdlinOrg/jqLeetOclock/raw/master/src/main/jqLeetOclock.js"></script>
+<script type="text/javascript">
+/*
+ * For demo purpose:
+ * we activate the leetOclock so that it triggers in 45 seconds from now
+ */
+var demoLeetOclock = function (){
+	var today=new Date();
+	var h=today.getHours();
+	var m=today.getMinutes();
+	var s=today.getSeconds() + 45;
+
+  $('body').leetOclock({
+    'hour' : h,
+    'minute' : m,
+		'second' : s,
+		'duration' : 20
+  });
+}
+
+/*
+ * Update the text field so the user knows when it will trigger
+ */
+var updateTimeToTrigger = function (){
+	var ms = $('body').leetOclock('getMsToTrigger');
+
+  if(ms ==0){
+	  $('#timeToTrigger').val(" ** it is fake 133t o'clock! **");
+  }else{
+  	var then = new Date(ms);
+  	var h=then.getHours() -1;
+  	var m=then.getMinutes();
+  	var s=then.getSeconds();
+		$('#timeToTrigger').val("Time left to fake leet o'clock: " + h + ":" + m + ":" + s + "");
+	}
+	setTimeout(function () { updateTimeToTrigger(); }, 1000);
+}
+
+$(document).ready(function () {
+	demoLeetOclock();
+	updateTimeToTrigger();
+});
+</script>
+
+<title>jqLeetOclock - a demo page</title></head><body>
+<p>
+Whenever I by chance happen to glance over to the phone and notice that it is "13:37" I instinctly think "oh, it's leet o'clock!"
+and feel that it should really be celebrated somehow.
+<br>So, in celebration of leet o'clock I have coded a jquery plugin that turn your web page into leet at leet o'clock,
+displays it like that for 30 seconds, and you have to wait another 24 hours for the magic moment.
+</p>
+<p>
+To get the impression what it looks like, I have faked leet o'clock to trigger every 45 seconds on this page (and display leet for 20 seconds)
+</p>
+<p>
+<input type="text" id="timeToTrigger" value="" size="33">
+</p>
+<p>
+Download the code over at <a href="https://github.com/EdlinOrg/jqLeetOclock/">github</a> and turn your page into a celebration of leet o'clock today!
+</p>
+</body></html>
